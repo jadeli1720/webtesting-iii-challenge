@@ -4,16 +4,12 @@ import { render } from '@testing-library/react';
 import Dashboard from './Dashboard';
 
 describe('<Dashoboard',() => {
+    
+    //shows the controls and display
     it('matches snapshot', () => {
         const tree = renderer.create(<Dashboard />);
         expect(tree.toJSON()).toMatchSnapshot();
     });
-
-    //Shows controls
-    // it('Dashboard renders <Controls/>', () => {
-    //     const { getByText} = render(<Dashboard />)
-    //     getByText(/controls/i)
-    // })
 
 });
 
