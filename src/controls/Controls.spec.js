@@ -27,5 +27,17 @@ describe('<Contorls',() => {
             toggleClosed={mockClosed} locked={false} closed={false}/>);
         fireEvent.click(getByText('Close Gate'));
         expect(mockClosed).toHaveBeenCalled();
+    });
+
+    // button disabled if gate is locked
+    it('closed toggle button should be disabled if gate is locked', () => {
+        const {getByText} = render(<Controls />);
+          expect(getByText("Lock Gate").disabled).toBeTruthy();
     })
+    // button disabled if gate is open
+    it('closed toggle button should be disabled if gate is locked', () => {
+        const {getByText} = render(<Controls locked={true} closed={true}/>);
+        expect(getByText("Open Gate").disabled).toBeTruthy();
+    })
+
 });
