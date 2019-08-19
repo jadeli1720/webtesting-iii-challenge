@@ -26,18 +26,20 @@ describe('<Display',() => {
         expect(queryByText(/locked/i)).toBeTruthy();
         expect(queryByText(/close/i)).toBeTruthy();
     })
-
+    
+   
+    // when `locked` or `closed` use the `red-led` class
     it('if locked or closed the class "red-led" should toggle', () => {
         const { queryAllByTestId } = render(<Display 
                 closed={true} locked={true} />);
         expect(queryAllByTestId('led red-led')).toBeTruthy();
 
     })
-    it('if locked or closed the class "red-led" should toggle', () => {
+    // when `unlocked` or `open` use the `green-led` class
+    it('if locked or closed the class "green-led" should toggle', () => {
         const { queryAllByTestId } = render(<Display 
                 closed={false} locked={false} />);
         expect(queryAllByTestId('led green-led')).toBeTruthy();
-
     })
 
 });
