@@ -9,4 +9,12 @@ describe('<Display',() => {
         expect(tree.toJSON()).toMatchSnapshot();
     });
 
+    it('should display unlocked', () => {
+        const { queryByText } = render(<Display/>);
+        expect(queryByText(/unlocked/i)).toBeTruthy();
+    })
+    it('should display open', () => {
+        const { queryByText } = render(<Display/>);
+        expect(queryByText(/open/i)).toBeTruthy();
+    })
 });
